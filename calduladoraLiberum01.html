@@ -1,0 +1,112 @@
+<!--  https://www.methaenergia.com.br/ -->
+<!-- =( (B3-(100*(B8/(1-B9)/(1-B10))+40)) / (B8/(1-B9)/(1-B10)) )*B8*B7 -->
+<!-- (trfUsr - ( 100 * ( trfIDP / (1-impPISCOFINS)/(1-impICMS) ) + 40 )) / (trfIDP /(1-impPISCOFINS)/(1-impICMS)) * trfIDP * desconto; -->
+
+<div id="calculadoraEconomia">
+
+    <label for="concessao">Qual a sua concessionária de energia?</label>
+        <select
+        id="selectConcessao"
+        name="concessao"
+        oninput="selectConcessao()"
+        onchange="selectConcessao()">
+            <option disabled selected value> -- Concessionária -- </option>
+            <option value="EDP">EDP</option>
+            <option value="CEMIG">CEMIG</option>
+        </select>
+
+    <label>Em média, quanto você gasta com a conta de luz por mês?</label>
+        <input
+        id="trfUsuario"
+        type="range"
+        min="400" max="30000"
+        value="100" step="100"
+        oninput="valorTarifaUsuario()"
+        onchange="valorTarifaUsuario()">
+        <div id="trfUsuarioNaConta">R$ 400</div>
+
+
+
+</div>
+
+
+<div id="resultadoCalculo">
+
+    <div>
+        <h2>Veja AGORA o quanto de dinheiro você tem deixado na mesa…</h2>
+        <p>Em 12 meses, você economizará aproximadamente <span id="economiaTotal12">R$ 3.624,84</span> por ano mesmo continuando com a 
+            <span id="selectConcessUsuario"></span>
+        </p>
+        <p>Aproximadamente <span id="economiaTotal01">R$ 20,00</span> por mês.*</p>
+        <p>* Essa simulação foi feita considerando uma conexão bifásica. O desconto real pode sofrer alterações.</p>
+
+    </div>
+
+</div>
+
+<style>
+    label, select, input,
+    #trfUsuarioNaConta,
+    #resultadoCalculo{
+        display: block;
+        margin: 25px;
+    }
+    input#trfUsuario {
+    width: -webkit-fill-available;
+    }
+    select#selectConcessao {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    }
+    #resultadoCalculo{
+        display: none;
+    }
+    div#calculadoraEconomia,
+    div#resultadoCalculo {
+        text-align: center;
+    }
+</style>
+
+
+
+<script>
+
+    // Função #selectConcessao
+    function selectConcessao(){
+        var selConcessionaria = document.getElementById("selectConcessao").value;
+        document.getElementById("selectConcessUsuario").innerHTML = selConcessionaria;
+        document.getElementById("resultadoCalculo").style.display = "block";
+    }
+
+    // Função de Cálculo
+    function valorTarifaUsuario() {
+
+        // Desconto
+        var desconto = 0.15;
+        // Impostos
+        var impPISCOFINS = 0.04;
+        var impICMS = 0.25;
+        // Tarifas
+        var trfIDP = 0.61051;
+        var trfCEMIG = 0.61805;
+        // Descontos
+        var descEDP = 0.15;
+        var descCEMIG = 0.18;
+
+        // Selecionar valor do Range #trfUsuario
+        var trfUsr = document.getElementById("trfUsuario").value;
+        // Insere na div #trfUsuarioNaConta o valor declarado na variável trfUsr
+        document.getElementById("trfUsuarioNaConta").innerHTML = "R$ " + trfUsr; 
+
+        // Calcular Economia
+        var economia = (trfUsr - ( 100 * ( trfIDP / (1-impPISCOFINS)/(1-impICMS) ) + 40 )) / (trfIDP /(1-impPISCOFINS)/(1-impICMS)) * trfIDP * desconto;
+        var economiaAno = economia * 12;
+        // console.log(economia*12);
+
+        // ExibirEconomia
+        document.getElementById("economiaTotal01").innerHTML = economia.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById("economiaTotal12").innerHTML = economiaAno.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
+
+</script>
