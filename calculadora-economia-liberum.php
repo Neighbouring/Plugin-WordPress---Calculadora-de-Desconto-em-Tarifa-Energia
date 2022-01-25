@@ -1,4 +1,7 @@
 <?php
+
+
+
 /**
  * Calculadora de Economia de Energia Liberum
  *
@@ -66,36 +69,33 @@ function calcular_economia(){
 }
 
 
-add_action('wp_enqueue_scripts', 'script_path_calculadora');
 
+// Registrar Javascript
 function script_path_calculadora() {
+
+	// Internal Javascript file
+    wp_enqueue_script( 'liberum-js', plugins_url('/js/calculadora_economia_liberum.js', __FILE__ ));
 
 	// // External Javascript file
     // wp_enqueue_script( 'tryvary-script', 'https://site.com.br/assets/css/style.js', array(), '1.6.0', true );
 
-    // Internal Javascript file
-    wp_enqueue_script( 'liberum-js', plugins_url('/js/calculadora_economia_liberum.js', __FILE__ ));
-
-    // //External CSS file
-    // wp_register_style( 'calculadora-economia-liberum-external-css', "http://localhost:8888/area51/liberum-energia/wp-content/plugins/calculadora-economia-liberum/assets/css/style.css" );
-
-    // //Internal CSS file
-    // wp_register_style( 'liberum-css', plugins_url('/assets/css/style.css',__FILE__ ) );
-
 }
+// Registrar Action para Script
+add_action('wp_enqueue_scripts', 'script_path_calculadora');
 
 
-/**
- * Registers a stylesheet.
- */
+
+// Registrar Style Sheet
 function estilo_calculadora() {
+
     wp_register_style( 'my-plugin', plugins_url( 'calculadora-economia-liberum/assets/css/style.css' ) );
     wp_enqueue_style( 'my-plugin' );
+
 }
-// Register style sheet.
+// Registrar Action para Style Sheet CSS
 add_action( 'wp_enqueue_scripts', 'estilo_calculadora' );
 
 
 
-// Shortcode
+// Adicionar Shortcode
 add_shortcode('calcular-economia-liberum', 'calcular_economia');
