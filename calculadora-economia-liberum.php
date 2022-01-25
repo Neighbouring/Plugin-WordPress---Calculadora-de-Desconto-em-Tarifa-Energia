@@ -19,26 +19,6 @@
 
 
 
-/* Função Calculo Comum */
-
-// function calcular(){
-	
-// 	$tarifax = 1;
-// 	$tarifay = 2;
-// 	$total = $tarifax + $tarifay;
-
-// 	echo $total;
-
-// 	echo '<script>
-// 		prompt("';
-// 	echo $total;
-// 	echo '");
-// 	</script>';
-
-// }
-
-
-
 /* Calculadora de Economia */
 function calcular_economia(){
 	
