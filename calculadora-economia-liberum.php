@@ -21,10 +21,6 @@
 
 /* Calculadora de Economia */
 function calcular_economia(){
-	
-	// $concessionaria = 1;
-	// $tarifay = 2;
-	// $total = $tarifax + $tarifay;
 
 	echo '<div id="calculadoraEconomia">
 
