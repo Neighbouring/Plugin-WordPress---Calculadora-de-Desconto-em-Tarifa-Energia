@@ -45,9 +45,9 @@ function calcular_economia(){
         onchange="valorTarifaUsuario()">
         <div id="trfUsuarioNaConta">R$ 400</div>
 
-
-
 	</div>
+
+	
 
 	<div id="resultadoCalculo">
 
