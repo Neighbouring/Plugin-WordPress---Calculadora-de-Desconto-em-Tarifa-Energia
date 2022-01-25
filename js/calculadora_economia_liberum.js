@@ -31,4 +31,6 @@ function valorTarifaUsuario() {
     // console.log(economia*12);
 
     // ExibirEconomia
+    document.getElementById("economiaTotal01").innerHTML = economia.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById("economiaTotal12").innerHTML = economiaAno.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }

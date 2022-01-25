@@ -27,6 +27,7 @@ function calcular_economia(){
 
 	echo '<div id="calculadoraEconomia">
 
+
     <label for="concessao">Qual a sua concessionária de energia?</label>
         <select
         id="selectConcessao"
@@ -38,6 +39,7 @@ function calcular_economia(){
             <option value="CEMIG">CEMIG</option>
         </select>
 
+
     <label>Em média, quanto você gasta com a conta de luz por mês?</label>
         <input
         id="trfUsuario"
@@ -48,6 +50,7 @@ function calcular_economia(){
         onchange="valorTarifaUsuario()">
         <div id="trfUsuarioNaConta">R$ 400</div>
 
+		
 	</div>
 
 	

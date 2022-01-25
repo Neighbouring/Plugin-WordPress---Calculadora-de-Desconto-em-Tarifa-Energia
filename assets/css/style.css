@@ -17,5 +17,6 @@ select#selectConcessao {
 }
 div#calculadoraEconomia,
 div#resultadoCalculo {
+    margin: auto;
     text-align: center;
 }
