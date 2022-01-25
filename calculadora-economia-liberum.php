@@ -42,9 +42,9 @@
 /* Calculadora de Economia */
 function calcular_economia(){
 	
-	$concessionaria = 1;
-	$tarifay = 2;
-	$total = $tarifax + $tarifay;
+	// $concessionaria = 1;
+	// $tarifay = 2;
+	// $total = $tarifax + $tarifay;
 
 	echo '<div id="calculadoraEconomia">
 
@@ -85,74 +85,41 @@ function calcular_economia(){
 
 		</div>
 
-	</div>
-
-	<style>
-		label, select, input,
-		#trfUsuarioNaConta,
-		#resultadoCalculo{
-			display: block;
-			margin: 25px;
-		}
-		input#trfUsuario {
-		width: -webkit-fill-available;
-		}
-		select#selectConcessao {
-		margin: auto;
-		text-align: center;
-		width: 50%;
-		}
-		#resultadoCalculo{
-			display: none;
-		}
-		div#calculadoraEconomia,
-		div#resultadoCalculo {
-			text-align: center;
-		}
-	</style>
-
-	<script>
-
-		// Função #selectConcessao
-		function selectConcessao(){
-			var selConcessionaria = document.getElementById("selectConcessao").value;
-			document.getElementById("selectConcessUsuario").innerHTML = selConcessionaria;
-			document.getElementById("resultadoCalculo").style.display = "block";
-		}
-
-		// Função de Cálculo
-		function valorTarifaUsuario() {
-
-			// Desconto
-			var desconto = 0.15;
-			// Impostos
-			var impPISCOFINS = 0.04;
-			var impICMS = 0.25;
-			// Tarifas
-			var trfIDP = 0.61051;
-			var trfCEMIG = 0.61805;
-			// Descontos
-			var descEDP = 0.15;
-			var descCEMIG = 0.18;
-
-			// Selecionar valor do Range #trfUsuario
-			var trfUsr = document.getElementById("trfUsuario").value;
-			// Insere na div #trfUsuarioNaConta o valor declarado na variável trfUsr
-			document.getElementById("trfUsuarioNaConta").innerHTML = "R$ " + trfUsr; 
-
-			// Calcular Economia
-			var economia = (trfUsr - ( 100 * ( trfIDP / (1-impPISCOFINS)/(1-impICMS) ) + 40 )) / (trfIDP /(1-impPISCOFINS)/(1-impICMS)) * trfIDP * desconto;
-			var economiaAno = economia * 12;
-			// console.log(economia*12);
-
-			// ExibirEconomia
-		}
-
-	</script>
-			
+	</div>	
 	';
+}
+
+
+add_action('wp_enqueue_scripts', 'script_path_calculadora');
+
+function script_path_calculadora() {
+
+	// // External Javascript file
+    // wp_enqueue_script( 'tryvary-script', 'https://site.com.br/assets/css/style.js', array(), '1.6.0', true );
+
+    // Internal Javascript file
+    wp_enqueue_script( 'liberum-js', plugins_url('/js/calculadora_economia_liberum.js', __FILE__ ));
+
+    // //External CSS file
+    // wp_register_style( 'calculadora-economia-liberum-external-css', "http://localhost:8888/area51/liberum-energia/wp-content/plugins/calculadora-economia-liberum/assets/css/style.css" );
+
+    // //Internal CSS file
+    // wp_register_style( 'liberum-css', plugins_url('/assets/css/style.css',__FILE__ ) );
 
 }
 
-add_shortcode('economia-liberum', 'calcular_economia');
 
+/**
+ * Registers a stylesheet.
+ */
+function estilo_calculadora() {
+    wp_register_style( 'my-plugin', plugins_url( 'calculadora-economia-liberum/assets/css/style.css' ) );
+    wp_enqueue_style( 'my-plugin' );
+}
+// Register style sheet.
+add_action( 'wp_enqueue_scripts', 'estilo_calculadora' );
+
+
+
+// Shortcode
+add_shortcode('calcular-economia-liberum', 'calcular_economia');

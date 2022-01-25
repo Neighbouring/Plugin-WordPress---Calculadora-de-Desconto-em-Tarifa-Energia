@@ -1,0 +1,21 @@
+label, select, input,
+#trfUsuarioNaConta,
+#resultadoCalculo{
+    display: block;
+    margin: 25px;
+}
+input#trfUsuario {
+    width: -webkit-fill-available;
+}
+select#selectConcessao {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+#resultadoCalculo{
+    display: none;
+}
+div#calculadoraEconomia,
+div#resultadoCalculo {
+    text-align: center;
+}
