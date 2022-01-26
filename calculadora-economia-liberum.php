@@ -25,7 +25,8 @@
 /* Calculadora de Economia */
 function calcular_economia(){
 
-	echo '<div id="calculadoraEconomia">
+	echo '<section id="sec-calculadora-desconto">
+    <div id="calculadoraEconomia">
 
 	<h2>Veja o quanto de DINHEIRO poderá economizar com a Liberum!</h2>
 
@@ -75,6 +76,8 @@ function calcular_economia(){
 		</div>
 
 </div>
+
+</section>
 	';
 }
 
