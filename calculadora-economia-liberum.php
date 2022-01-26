@@ -27,7 +27,7 @@ function calcular_economia(){
 
 	echo '<div id="calculadoraEconomia">
 
-	<h2>Veja AGORA o quanto de dinheiro você tem deixado na mesa…</h2>
+	<h2>Veja o quanto de DINHEIRO poderá economizar com a Liberum!</h2>
 
     <label for="concessao">Qual a sua concessionária de energia?</label>
         <select
@@ -60,13 +60,15 @@ function calcular_economia(){
 
 		<div>
 
-			<p>Em 12 meses, você economizará aproximadamente <span id="economiaTotal12">R$ 3.624,84</span> diretamente em sua fatura da
-				<span id="selectConcessUsuario"></span>.
+			<p id="p-txt-01">Em 12 meses, você economizará aproximadamente
+                <span id="economiaTotal12">R$ 3.624,84</span>
+                diretamente na fatura da
+			    <span id="selectConcessUsuario"></span>.
 			</p>
 
-			<p>Aproximadamente <span id="economiaTotal01">R$ 20,00</span> por mês.*</p>
-            
-			<p>* Essa simulação foi feita considerando uma conexão bifásica. O desconto real pode sofrer alterações.</p>
+			<p id="p-txt-02">Aproximadamente* <span id="economiaTotal01">R$ 20,00</span> por mês.</p>
+
+			<p id="p-txt-03">*Essa simulação foi feita considerando uma conexão bifásica.<br>O desconto real pode sofrer alterações.</p>
 
 		<div>
 			<button id="btn-queroEconomizar" onclick="abreFormularioLead()">Quero economizar</button>

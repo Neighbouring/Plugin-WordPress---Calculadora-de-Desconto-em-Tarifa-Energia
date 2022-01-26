@@ -2,6 +2,14 @@ p {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+p#p-txt-01 {
+    margin-bottom: 50px;
+}
+p#p-txt-03{
+    font-size: 12px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+}
 label, select, input,
 #trfUsuarioNaConta,
 #resultadoCalculo{
