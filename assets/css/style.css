@@ -1,3 +1,7 @@
+p {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 label, select, input,
 #trfUsuarioNaConta,
 #resultadoCalculo{
@@ -12,7 +16,9 @@ select#selectConcessao {
     text-align: center;
     width: 50%;
 }
-#resultadoCalculo{
+#resultadoCalculo,
+#div-trfUsuario,
+section#formulario-calculo-lead{
     display: none;
 }
 div#calculadoraEconomia,

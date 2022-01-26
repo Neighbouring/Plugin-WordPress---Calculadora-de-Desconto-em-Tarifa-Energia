@@ -40,8 +40,8 @@ function calcular_economia(){
             <option value="CEMIG">CEMIG</option>
         </select>
 
-
-    <label>Em média, quanto você gasta com a conta de luz por mês?</label>
+    <div id="div-trfUsuario">
+        <label>Em média, quanto você gasta com a conta de luz por mês?</label>
         <input
         id="trfUsuario"
         type="range"
@@ -50,30 +50,29 @@ function calcular_economia(){
         oninput="valorTarifaUsuario()"
         onchange="valorTarifaUsuario()">
         <div id="trfUsuarioNaConta">R$ 400</div>
+    </div>
 
-
-	</div>
+</div>
 
 	
 
-	<div id="resultadoCalculo">
+<div id="resultadoCalculo">
 
 		<div>
-			<p>Em 12 meses, você economizará aproximadamente <span id="economiaTotal12">R$ 3.624,84</span> por ano mesmo continuando com a 
-				<span id="selectConcessUsuario"></span>
+
+			<p>Em 12 meses, você economizará aproximadamente <span id="economiaTotal12">R$ 3.624,84</span> diretamente em sua fatura da
+				<span id="selectConcessUsuario"></span>.
 			</p>
+
 			<p>Aproximadamente <span id="economiaTotal01">R$ 20,00</span> por mês.*</p>
+            
 			<p>* Essa simulação foi feita considerando uma conexão bifásica. O desconto real pode sofrer alterações.</p>
 
 		<div>
-			<a href="https://desconto.liberumenergia.com.br/" target="_self">Quero economizar</a>
+			<button id="btn-queroEconomizar" onclick="abreFormularioLead()">Quero economizar</button>
 		</div>
 
-	</div>
-	
-	<div id="btnRedirectForm">
-		<buton>
-	</div>
+</div>
 	';
 }
 
