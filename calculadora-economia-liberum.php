@@ -45,6 +45,7 @@ function calcular_economia(){
         <label>Em média, quanto você gasta com a conta de luz por mês?</label>
         <input
         id="trfUsuario"
+        class="slider"
         type="range"
         min="400" max="30000"
         value="100" step="100"
