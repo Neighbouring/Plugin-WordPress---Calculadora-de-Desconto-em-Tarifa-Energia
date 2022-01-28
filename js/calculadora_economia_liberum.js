@@ -4,7 +4,7 @@ function selectConcessao(){
     document.getElementById("selectConcessUsuario").innerHTML = selConcessionaria;
     document.getElementById("resultadoCalculo").style.display = "block";
     document.getElementById("div-trfUsuario").style.display = "block";
-    scroll(500);
+    scroll(600);
 }
 
 
@@ -22,10 +22,10 @@ function valorTarifaUsuario() {
     var trfFinal;
     if (selConcessionaria = trfEDP) {
         trfFinal = trfEDP;
-        console.log("Tarifa EDP aplicada = 0.61051");
+        // console.log("Tarifa EDP aplicada = 0.61051");
     } else {
         trfFinal = trfCEMIG;
-        console.log("Tarifa CEMIG aplicada = 0.61805");
+        // console.log("Tarifa CEMIG aplicada = 0.61805");
     }
     // Descontos
     var descEDP = 0.15;
@@ -50,7 +50,7 @@ function valorTarifaUsuario() {
 // Função para abrir formulário
 function abreFormularioLead(){
     document.getElementById("formulario-calculo-lead").style.display = "block";
-    scroll(700);
+    scroll(1300);
 }
 
 
