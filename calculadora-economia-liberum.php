@@ -1,7 +1,4 @@
 <?php
-
-
-
 /**
  * Calculadora de Economia de Energia Liberum
  *
@@ -24,6 +21,8 @@
 
 /* Calculadora de Economia */
 function calcular_economia(){
+    // echo plugin_dir_url( __FILE__ );
+    // echo '<section id="headerCalculadora"></section><br><br>';
 
 	echo '<section id="sec-calculadora-desconto">
     <div id="calculadoraEconomia">
