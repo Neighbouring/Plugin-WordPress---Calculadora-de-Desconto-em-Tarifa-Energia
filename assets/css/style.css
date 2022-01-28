@@ -3,6 +3,29 @@ html {
 }
 
 
+/** Remover Header e BreadCrumb do Tema Atual + Setup da Página **/
+/* section#breadcrumb-area,
+header#header-section{
+    display: none;
+}
+div#sfsi_plus_floater {
+    display: none;
+}
+.section-padding {
+    padding: 0px 0px 0px 0px !important;
+} */
+
+
+section#headerCalculadora {
+    background-image: url(../img/header.jpg);
+    height: 350px;
+    width: 100%;
+    background-color: antiquewhite;
+    background-size: cover;
+    background-position: center;
+}
+
+
 section#sec-calculadora-desconto {
     min-height: 500px;
 }
@@ -30,11 +53,28 @@ p#p-txt-03{
 }
 
 
+select#selectConcessao {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    border: 2px solid orange;
+    background-color: antiquewhite;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+@media only screen and (max-width: 600px){
+    select#selectConcessao { 
+        width: 100%;
+    }
+}
+
+
 label, select, input,
 #trfUsuarioNaConta,
 #resultadoCalculo{
     display: block;
-    margin: 25px;
+    margin: 4px 0px 50px 0px;
 }
 
 
@@ -80,18 +120,6 @@ input#trfUsuario {
 }
 
 
-select#selectConcessao {
-    margin: auto;
-    text-align: center;
-    width: 50%;
-    border: 2px solid orange;
-    background-color: antiquewhite;
-    height: 50px;
-    border-radius: 5px;
-    margin-bottom: 100px;
-}
-
-
 div#trfUsuarioNaConta {
     font-weight: bold;
 }
@@ -132,4 +160,17 @@ button#btn-queroEconomizar {
     color: white;
     border: 0px;
     font-weight: bold;
+}
+
+
+section#formulario-calculo-lead {
+    padding: 2%;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+@media only screen and (max-width: 600px){
+    section#formulario-calculo-lead {
+        padding: 30px;
+    }
 }
