@@ -5,7 +5,7 @@
 /**
  * Calculadora de Economia de Energia Liberum
  *
- * Plugin Name: Calculadora Liberum
+ * Plugin Name: Calculadora de Economia Liberum
  * Plugin URI:  https://neighbouring.com.br/
  * Description: Calculadora de Economia de Energia com Shortcode
  * Version:     1.0.0
@@ -28,9 +28,9 @@ function calcular_economia(){
 	echo '<section id="sec-calculadora-desconto">
     <div id="calculadoraEconomia">
 
-	<h2>Veja o quanto de DINHEIRO poderá economizar com a Liberum!</h2>
+	<h2 id="h2Titulo">Veja o quanto de DINHEIRO poderá economizar com a Liberum!</h2>
 
-    <label for="concessao">Qual a sua concessionária de energia?</label>
+    <label for="concessao" id="lblConcessao">Qual a sua concessionária de energia?</label>
         <select
         id="selectConcessao"
         name="concessao"
@@ -62,9 +62,9 @@ function calcular_economia(){
 
 		<div>
 
-			<p id="p-txt-01">Em 12 meses, você economizará aproximadamente
+			<p id="p-txt-01">Em 12 meses você economizará aproximadamente*
                 <span id="economiaTotal12">R$ 3.624,84</span>
-                diretamente na fatura da
+                diretamente na fatura da concessionária 
 			    <span id="selectConcessUsuario"></span>.
 			</p>
 
