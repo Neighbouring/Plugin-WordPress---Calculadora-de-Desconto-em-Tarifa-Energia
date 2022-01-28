@@ -4,6 +4,7 @@ function selectConcessao(){
     document.getElementById("selectConcessUsuario").innerHTML = selConcessionaria;
     document.getElementById("resultadoCalculo").style.display = "block";
     document.getElementById("div-trfUsuario").style.display = "block";
+    scroll(500);
 }
 
 
@@ -49,4 +50,12 @@ function valorTarifaUsuario() {
 // Função para abrir formulário
 function abreFormularioLead(){
     document.getElementById("formulario-calculo-lead").style.display = "block";
+    scroll(700);
+}
+
+
+// Função Scroll recebe valor posição Y em pixel como parâmetro
+function scroll(pixel) {
+    var x = pixel;
+    window.scrollTo(0, pixel);
 }
