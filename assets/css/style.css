@@ -1,5 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 section#sec-calculadora-desconto {
     min-height: 500px;
+}
+
+
+h2#h2Titulo {
+    font-weight: 600;
 }
 
 
@@ -8,11 +18,14 @@ p {
     margin-bottom: 50px;
 }
 p#p-txt-01 {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
+}
+p#p-txt-02 {
+    display: none;
 }
 p#p-txt-03{
     font-size: 12px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     margin-top: 0px;
 }
 
@@ -23,38 +36,48 @@ label, select, input,
     display: block;
     margin: 25px;
 }
+
+
+label#lblConcessao {
+    margin-top: 100px;
+    font-weight: bold;
+}
+
+
 input#trfUsuario {
     width: -webkit-fill-available;
+}
+input#trfUsuario {
+    padding: 3px;
+    height: 0px;
 }
 .slider {
     -webkit-appearance: none;
     width: 100%;
     height: 15px;
-    border-radius: 5px;  
+    border-radius: 15px !important;  
     background: #d3d3d3;
     outline: none;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     -webkit-transition: .2s;
     transition: opacity .2s;
-  }
-  
-  .slider::-webkit-slider-thumb {
+}
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
-    border-radius: 50%; 
-    background: #04AA6D;
+    border-radius: 15px; 
+    background: orange;
     cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
+}
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    background: #04AA6D;
+    border-radius: 15px;
+    background: orange;
     cursor: pointer;
-  }
+}
 
 
 select#selectConcessao {
@@ -63,9 +86,17 @@ select#selectConcessao {
     width: 50%;
     border: 2px solid orange;
     background-color: antiquewhite;
-    font-weight: bold;
     height: 50px;
+    border-radius: 5px;
+    margin-bottom: 100px;
 }
+
+
+div#trfUsuarioNaConta {
+    font-weight: bold;
+}
+
+
 #resultadoCalculo,
 #div-trfUsuario,
 section#formulario-calculo-lead{
@@ -100,4 +131,5 @@ button#btn-queroEconomizar {
     background-color: orange;
     color: white;
     border: 0px;
+    font-weight: bold;
 }
